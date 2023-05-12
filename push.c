@@ -1,6 +1,32 @@
 #include "monty.h"
 
 /**
+ * is_integer - check if the string is an integer
+ *
+ * @str: the string to check
+ *
+ * Return: 1 if its an integer, else 0
+ */
+
+int is_integer(const char *str)
+{
+	if (*str == '-' || *str == '+')
+		str++;
+
+	if (*str == '\0')
+		return (0);
+
+	while (*str)
+	{
+		if (!isdigit(*str))
+			return (0);
+		str++;
+	}
+
+	return (1);
+}
+
+/**
  * push_op - push an element onto the stack
  *
  * @stack: double pointer to the top of the stack
@@ -22,7 +48,7 @@ void push_op(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	if (!isdigit(token[0]) && token[0] != '-' && token[0] != '+')
+	if (!is_integer(token))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
