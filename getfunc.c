@@ -18,6 +18,7 @@ void getfunc(char *opcode, stack_t **stack, unsigned int line_number)
 		{"pall", pall_op},
 		{"pint", pint_op},
 		{"pop", pop_op},
+		{"swap", swap_op},
 		/* Add more opcode-function mappings here */
 		{NULL, NULL}};
 
