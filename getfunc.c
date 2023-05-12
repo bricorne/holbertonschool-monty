@@ -16,6 +16,7 @@ void getfunc(char *opcode, stack_t **stack, unsigned int line_number)
 	instruction_t instructions[] = {
 		{"push", push_op},
 		{"pall", pall_op},
+		{"pint", pint_op},
 		/* Add more opcode-function mappings here */
 		{NULL, NULL}};
 
