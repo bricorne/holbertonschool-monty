@@ -1,9 +1,14 @@
 #include "monty.h"
 
-/*
+/**
+ * getfunc - match the given opcode to its
+ * corresponding function and execute it
  *
+ * @opcode: opcode to be matched and executed
+ * @stack: double pointer to the top of the stack
+ * @line_number: line number of the opcode in the file
  *
- *
+ * Return: void
  */
 
 void getfunc(char *opcode, stack_t **stack, unsigned int line_number)
@@ -15,6 +20,7 @@ void getfunc(char *opcode, stack_t **stack, unsigned int line_number)
 		{NULL, NULL}};
 
 	int i = 0;
+
 	while (instructions[i].opcode != NULL)
 	{
 		if (strcmp(instructions[i].opcode, opcode) == 0)

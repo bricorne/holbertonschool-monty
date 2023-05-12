@@ -1,10 +1,12 @@
 #include "monty.h"
 
-/*
+/**
+ * push_op - push an element onto the stack
  *
+ * @stack: double pointer to the top of the stack
+ * @line_number: line number of the opcode in the file
  *
- *
- *
+ * Return: void
  */
 
 void push_op(stack_t **stack, unsigned int line_number)
@@ -29,6 +31,7 @@ void push_op(stack_t **stack, unsigned int line_number)
 	value = atoi(token);
 
 	stack_t *new_node = malloc(sizeof(stack_t));
+
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
