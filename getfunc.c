@@ -20,7 +20,7 @@ void getfunc(char *opcode, stack_t **stack, unsigned int line_number)
 		{"pop", pop_op},
 		{"swap", swap_op},
 		{"add", add_op},
-		/* Add more opcode-function mappings here */
+		{"nop", nop_op},
 		{NULL, NULL}};
 
 	int i = 0;
